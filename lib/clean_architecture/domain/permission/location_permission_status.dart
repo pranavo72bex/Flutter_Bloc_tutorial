@@ -1,5 +1,5 @@
 enum LocationPermissionStatus {
   denied,
   permanentlyDenied,
-  granded,
+  granted,
 }
