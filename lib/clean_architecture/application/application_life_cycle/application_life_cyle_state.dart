@@ -8,4 +8,6 @@ class ApplicationLifeCyleState with _$ApplicationLifeCyleState {
   const factory ApplicationLifeCyleState.resumed() = _Resumed;
 
   const ApplicationLifeCyleState._();
+
+  bool get isResumed => maybeWhen(resumed: () => true, orElse: () => false);
 }

@@ -45,6 +45,7 @@ dependencies:
   geolocator: ^9.0.2
   bloc: ^8.1.2
   meta: ^1.8.0
+  rxdart: ^0.27.5
   
 
 dev_dependencies:
