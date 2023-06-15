@@ -8,8 +8,6 @@ import '../map/map_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -23,12 +21,16 @@ class MyApp extends StatelessWidget {
           lazy: false,
         )
       ],
-      child: MaterialApp(
-        title: 'Map App',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+      child: BlocProvider(
+        create: (context) => getIt<PermissionCubit>(),
+        lazy: false,
+        child: MaterialApp(
+          title: 'Map App',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: const MapPage(), //Replace this with CounterExample
         ),
-        home: const MapPage(), //Replace this with CounterExample
       ),
     );
   }
