@@ -6,8 +6,11 @@ import 'package:injectable/injectable.dart';
 @Injectable(as: IlocationService)
 class GeolocatorLocationService implements IlocationService {
   @override
-  Stream<LocationModel> get positionStream =>
-      Geolocator.getPositionStream().map(
+  Stream<LocationModel> get positionStream => Geolocator.getPositionStream(
+          locationSettings: const LocationSettings(
+        accuracy: LocationAccuracy.high,
+        distanceFilter: 100,
+      )).map(
         (Position position) => LocationModel(
           latitude: position.latitude,
           longitude: position.longitude,
